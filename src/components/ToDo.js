@@ -1,12 +1,12 @@
 import React from "react";
 
-const ToDo = ({text, toDos, setToDos, toDo}) => {
+const ToDo = ({text, toDos, setToDos, toDo, filteredToDos}) => {
   const deleteHandler = () => {
     setToDos(toDos.filter((el) => el.id !== toDo.id));
   };
 
   const completeHandler = () => {
-   setToDos(  toDos.map((item) => {
+   setToDos(  filteredToDos.map((item) => {
        if(item.id === toDo.id){
          return {
            ...item, completed: !item.completed
